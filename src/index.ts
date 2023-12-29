@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import compression from "compression";
 import * as dotenv from "dotenv";
 import db_connect from "./db/connection_&_models";
+import routes from "./routes";
 
 dotenv.config();
 db_connect();
@@ -31,3 +32,5 @@ app.get("/", (req: Request, res: Response) => {
     msg: "Welcome to My Express Server 🏠🚀🔥",
   });
 });
+
+app.use("/api", routes());
