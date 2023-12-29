@@ -4,8 +4,10 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import compression from "compression";
 import * as dotenv from "dotenv";
+import db_connect from "./db/connection_&_models";
 
 dotenv.config();
+db_connect();
 
 const app = express();
 
