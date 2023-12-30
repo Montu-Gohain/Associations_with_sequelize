@@ -15,11 +15,11 @@ Let's start with this command
 ```
 
 ```ts
-  npm install express dotenv pg pg-hstore sequelize cors compression body-parser ts-node typescript
+  npm install express dotenv pg pg-hstore sequelize cors compression body-parser ts-node typescript morgan
 ```
 
 ```ts
-  npm install -D nodemon @types/express @types/cors @types/sequelize @types/body-parser @types/compression
+  npm install -D nodemon @types/express @types/cors @types/sequelize @types/body-parser @types/compression @types/morgan
 ```
 
 _Note_ : Since I am using PostgreSQL as my RDBMS , so i've installed pg and pg-hstore , these are database connectors. In case you want to use mysql , then you can use mysql2 connector

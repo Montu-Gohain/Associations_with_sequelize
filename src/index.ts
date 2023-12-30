@@ -6,6 +6,7 @@ import compression from "compression";
 import * as dotenv from "dotenv";
 import db_connect from "./db/connection_&_models";
 import routes from "./routes";
+import morgan from "morgan";
 
 dotenv.config();
 db_connect();
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors({ credentials: true }));
 app.use(compression());
 app.use(bodyParser.json());
+app.use(morgan("tiny"));
 
 const server = http.createServer(app);
 
