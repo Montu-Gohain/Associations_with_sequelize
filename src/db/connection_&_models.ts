@@ -57,9 +57,38 @@ export const Capital = sequelize.define(
   }
 );
 
-// & Let's make the association here.
+// & Let's make the association here. ONE To ONE Associaation
 
 Country.hasOne(Capital);
 Capital.belongsTo(Country);
+
+// Todo : Let's learn how to implement one to many Association with the example of of guitar players and guitar brands.
+
+export const Guitar = sequelize.define(
+  "guitar",
+  {
+    brandName: {
+      type: STRING,
+      allowNull: false,
+    },
+  },
+  {
+    timestamps: false,
+  }
+);
+
+export const Guitarist = sequelize.define(
+  "guitarist",
+  {
+    guitaristName: {
+      type: STRING,
+      allowNull: false,
+    },
+  },
+  { timestamps: false }
+);
+
+Guitar.hasMany(Guitarist);
+Guitarist.belongsTo(Guitar);
 
 // sync_all_tables_forced();
